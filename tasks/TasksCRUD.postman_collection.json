@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "289dcf02-6b72-487f-a155-0946f26e2cb1",
+		"name": "TasksCRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNjI3NTI0MzE5LCJleHAiOjE2Mjc1Mjc5MTl9.mYXyKusVmjLTy28eeFfOO1gWJ3eu9xC8Zk5iLSk5zX6Ep5oFko0_NIMcSq3vG9Gtp4YUJM6MmSvYcz94gzaVIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"summary\": \"TestSummary\",\n    \"details\": \"TestDetails\",\n    \"status\": \"ACTIVE\",\n    \"targetTime\":\"2021-07-20T04:42:55.142Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/task/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"task",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateToken",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\":\"test\",\n    \"password\":\"pass\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/task/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"task",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNjI3NDYwNjcwLCJleHAiOjE2Mjc0NjQyNzB9.VXXcFpd2RunHlPCjxTNDRTuIYCwyiHHnwwmyNZIb53SgCHnO7utnjxqQqZKY_cvJGf7RAQo7CdO2TAJNr4Sewg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/task/?taskId=78958b15-8dbe-4495-a581-786023425c39",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"task",
+						""
+					],
+					"query": [
+						{
+							"key": "taskId",
+							"value": "78958b15-8dbe-4495-a581-786023425c39"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNjI3NDQzODUxLCJleHAiOjE2Mjc0NDc0NTF9.cTH80ALNffef-G_vNrsCnFw74UpRvgAHagP9MUIDV7gqTyyrIAcJbK0oNnKJllbVxVHCxndSfOd-8Gcb_Z2kNg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"78958b15-8dbe-4495-a581-786023425123\",\n    \"summary\": \"TestSummary\",\n    \"details\": \"\",\n    \"status\": \"ACTIVE\",\n    \"targetTime\": \"2021-07-20T04:42:55.142Z\",\n    \"creationTime\": \"2021-07-28T04:51:35.658686+02:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/task/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"task",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNjI3NDQzODUxLCJleHAiOjE2Mjc0NDc0NTF9.cTH80ALNffef-G_vNrsCnFw74UpRvgAHagP9MUIDV7gqTyyrIAcJbK0oNnKJllbVxVHCxndSfOd-8Gcb_Z2kNg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/task/?taskId=78958b15-8dbe-4495-a581-786023425c39",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"task",
+						""
+					],
+					"query": [
+						{
+							"key": "taskId",
+							"value": "78958b15-8dbe-4495-a581-786023425c39"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
